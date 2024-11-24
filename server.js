@@ -1,8 +1,8 @@
-const app = require('./server/config/app');
-const PORT = process.env.PORT || 3000;
-const mongoose = require('mongoose');
+const app = require('./server/config/app'); // Import the app configuration
+const PORT = process.env.PORT || 3000; // Set the server port from .env or default to 3000
+const mongoose = require('mongoose'); // Import Mongoose for MongoDB connection
 
-let DB = require('./server/config/db');
+let DB = require('./server/config/db'); // Import the mongodb URI
 
 // Connect to MongoDB
 mongoose.connect(DB.URI);

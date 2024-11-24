@@ -1,7 +1,8 @@
-<%- include('../partials/header') %>
+<%- include('../partials/header') %> <!-- Include the header -->
 <main>
   <h1>Add New Assignment</h1>
   <form action="/assignments" method="POST">
+  <!-- Form to add a new assignment -->
     <label for="title">Title</label>
     <input type="text" id="title" name="title" required>
     
@@ -14,4 +15,4 @@
     <button type="submit">Add Assignment</button>
   </form>
 </main>
-<%- include('../partials/footer') %>
+<%- include('../partials/footer') %> <!-- Include the footer -->

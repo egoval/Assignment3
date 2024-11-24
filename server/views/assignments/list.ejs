@@ -1,7 +1,9 @@
-<%- include('../partials/header') %>
+<%- include('../partials/header') %><!-- Include the shared header -->
 <main>
   <h1>All Assignments</h1>
+  <!-- Link to the Create Assignment page -->
   <a href="/assignments/new" class="btn">Add New Assignment</a>
+  <!-- Table to display all assignments -->
   <table>
     <thead>
       <tr>
@@ -12,7 +14,8 @@
       </tr>
     </thead>
     <tbody>
-      <% assignments.forEach(assignment => { %>
+      <!-- Loop through the list of assignments -->
+      <% assignments.forEach(assignment => { %> 
         <tr>
           <td><%= assignment.title %></td>
           <td><%= assignment.description %></td>
@@ -33,4 +36,4 @@
     return confirm('Are you sure you want to delete this assignment?');
   }
 </script>
-<%- include('../partials/footer') %>
+<%- include('../partials/footer') %> <!-- Include the shared footer -->

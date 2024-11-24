@@ -1,10 +1,9 @@
-require('dotenv').config();
-const express = require('express');
-const bodyParser = require('body-parser');
-const methodOverride = require('method-override');
-const path = require('path');
+const express = require('express'); // Import Express framework
+const bodyParser = require('body-parser'); // Middleware to parse form data
+const methodOverride = require('method-override');// Allow PUT and DELETE in forms
+const path = require('path');// Utility to handle file paths
 
-const app = express();
+const app = express(); // Create an instance of the Express application
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
