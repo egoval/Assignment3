@@ -7,8 +7,7 @@ const authRoutes = require('../routes/auth');
 const { ensureAuthenticated, setAuthUser } = require('./auth');
 const app = express(); // Create an instance of the Express application
 app.use(setAuthUser);
-// Protect routes for assignments
-app.use('/assignments', ensureAuthenticated, assignmentRoutes);
+
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
@@ -33,5 +32,6 @@ app.use('/assignments', assignmentRoutes);
 app.get('/', (req, res) => {
   res.render('index', { title: 'Assignment Tracker' });
 });
-
+// Protect routes for assignments
+app.use('/assignments', ensureAuthenticated, assignmentRoutes);
 module.exports = app;
