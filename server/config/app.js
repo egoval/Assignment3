@@ -6,7 +6,7 @@ const cookieParser = require('cookie-parser');
 const authRoutes = require('../routes/auth');
 const { ensureAuthenticated, setAuthUser } = require('./auth');
 const app = express(); // Create an instance of the Express application
-app.use(setAuthUser);
+
 
 // Middleware
 app.use(bodyParser.urlencoded({ extended: true }));
@@ -16,7 +16,7 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, '../views'));
 // Middleware to parse cookies
 app.use(cookieParser());
-
+app.use(setAuthUser);
 // Middleware to set user info for EJS views
 
 // Database Connection
